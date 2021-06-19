@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::prefix('users')->group(function (){
     Route::get('list',[UserController::class,'index'])->name('users.index');
