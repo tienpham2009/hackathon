@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/login' , [ AuthController::class , 'showFormLogin'])->name('auth.showFormLogin');
 Route::post('/login' ,[AuthController::class , 'checkLogin'] )->name('submitLogin');
