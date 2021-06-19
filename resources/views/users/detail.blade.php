@@ -1,7 +1,5 @@
 @extends('home')
 
-@section('title', 'Cập nhật công viêc')
-
 @section('content')
 
     <div class="row">
