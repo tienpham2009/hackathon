@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Users')->insert([
+        DB::table('users')->insert([
             [
                 'name' => 'Nguyen Duc Tam',
                 'name_ingame' => 'BoyHaNoi',
