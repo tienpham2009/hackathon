@@ -14,12 +14,12 @@ class AuthController extends Controller
         $this->authRepo = $data;
     }
 
-    public function showFormLogin()
+    public function showFormLogin(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('login');
     }
 
-    public function checkLogin(Request $request )
+    public function checkLogin(Request $request ): \Illuminate\Http\RedirectResponse
     {
         $email = $request->email;
         $password = $request->password;
@@ -27,6 +27,7 @@ class AuthController extends Controller
         $users = $this->authRepo->getAll();
         foreach ($users as $user){
             if ($email == $user->email && $password == $user->password){
+                session()->flash('login-success' , $user->id);
                 $flag = true;
             }
         }
@@ -36,7 +37,17 @@ class AuthController extends Controller
         }else{
             $error = "tai khoan hoac matkhau khong dung";
             session()->flash('login-error' , $error);
-            return view('login');
+            return redirect()->route('showFormLogin');
         }
+    }
+
+    public function showFormRegistration(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('registration');
+    }
+
+    public function registration()
+    {
+
     }
 }

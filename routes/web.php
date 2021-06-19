@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +19,12 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/login' , [ AuthController::class , 'showFormLogin'])->name('auth.showFormLogin');
+Route::get('/login' , [ AuthController::class , 'showFormLogin'])->name('showFormLogin');
 Route::post('/login' ,[AuthController::class , 'checkLogin'] )->name('submitLogin');
+Route::get('/registration' ,[AuthController::class , 'showFormRegistration'])->name('showFormRegistration');
+Route::post('/registration' ,[AuthController::class , 'registration'] )->name('registration');
+Route::prefix('users')->group(function (){
+    Route::get('list',[UserController::class,'index'])->name('users.index');
+});
+
 
