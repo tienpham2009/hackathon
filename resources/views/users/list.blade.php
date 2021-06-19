@@ -25,10 +25,10 @@
 <body>
 <div class="col-12 col-sm-12 row mb-2">
     @foreach($users as $key => $item)
-        <div class="col-sm-4 grow" style="margin-top: 10px">
+        <div class="col-sm-3 grow" style="margin-top: 10px">
             <div class="card text-center">
                 <div>
-                    <a href="#" style="text-decoration: none">
+                    <a href="{{route('users.show',['id'=>$item->id])}}" style="text-decoration: none">
                         <div class="card-body">
                             <img src="{{$item->image}}" style="width: 100% ; height: 150px"/>
                         </div>
