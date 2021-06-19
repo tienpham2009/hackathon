@@ -5,20 +5,19 @@ namespace App\Http\Repositories;
 
 
 use App\Models\User;
-use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class UserRepository
 {
-    protected User $userModel;
-
-    public function __construct(User $user)
+    public function getAll(): \Illuminate\Support\Collection
     {
-        $this->userModel = $user;
+        return DB::table('users')->get();
     }
 
-    public function getAll(): Collection|array
+
+    public function getById($id)
     {
-       return $this->userModel->all();
+        return $this->userModel->findOrFail($id);
     }
 
 }

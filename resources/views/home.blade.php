@@ -305,6 +305,8 @@
                 </div>
             </div>
         </section>
+        @include('content')
+        @yield("content")
     </div>
 
     <!-- Control Sidebar -->
@@ -354,8 +356,20 @@
 <script src="{{\Illuminate\Support\Facades\URL::asset("js/owl.carousel.min.js")}}"></script>
 
 <!-- content -->
-
-
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            items:1,
+            loop:true,
+            nav:true,
+            dots:true,
+            autoplay:true,
+            autoplaySpeed:2000,
+            smartSpeed:2500,
+            autoplayHoverPause:true
+        });
+    });
+</script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'

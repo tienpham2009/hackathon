@@ -29,18 +29,17 @@
 }
 
 .slide-1 {
-    background-image: url("lmht.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .slide-2 {
-    background-image: url("pubg.jpeg");
+    background-image: url("public/image/pubg.jpeg");
     background-size: cover;
     background-position: center;
 }
 .slide-3 {
-    background-image: url("ow.jpg");
+    background-image: url("public/image/ow.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -116,7 +115,7 @@
 }
 
 .login-container {
-    background-image: url("login/fantasy-library.jpg");
+    background-image: url("../image/fantasy-library.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -124,7 +123,7 @@
     width: 1280px;
 }
 .register-container {
-    background-image: url("login/fantasy-library-background-wallpaper-67427-69736-hd-wallpapers.jpg");
+    background-image: url("../image/fantasy-library-background-wallpaper-67427-69736-hd-wallpapers.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

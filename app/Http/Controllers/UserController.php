@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+
 use App\Http\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -11,23 +13,20 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     protected UserRepository $userRepository;
+
     public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
     }
 
-    public function index(): Application|Factory|View
+    public function index()
     {
         $users = $this->userRepository->getAll();
         return view('users.list',compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Application|Factory|View
-     */
-    public function create(): View|Factory|Application
+
+    public function create()
     {
         return view('users.create');
     }
@@ -47,11 +46,12 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.detail',compact('user'));
     }
 
     /**
@@ -81,10 +81,14 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+//        $user = User::findOrFail($id);
+//        $user->delete();
+//        Session::flash('delete-success','Delete success');
+//        return redirect()->route('users.list');
     }
+
 }
