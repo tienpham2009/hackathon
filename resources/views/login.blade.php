@@ -5,6 +5,11 @@
             {{ session()->get('login-error') }}
         </p>
     @endif
+    @if(session()->has('registration_success'))
+        <p>
+            {{ session()->get('registration_success') }}
+        </p>
+    @endif
     <p>email: </p>
     <input type="email" name="email">
     <p>Password</p>
