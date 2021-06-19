@@ -13,4 +13,11 @@ class UserRepository
     {
         return DB::table('users')->get();
     }
+
+
+    public function getById($id)
+    {
+        return $this->userModel->findOrFail($id);
+    }
+
 }

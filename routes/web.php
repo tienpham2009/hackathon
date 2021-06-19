@@ -24,7 +24,11 @@ Route::post('/login' ,[AuthController::class , 'checkLogin'] )->name('submitLogi
 Route::get('/registration' ,[AuthController::class , 'showFormRegistration'])->name('showFormRegistration');
 Route::post('/registration' ,[AuthController::class , 'registration'] )->name('registration');
 Route::prefix('users')->group(function (){
-    Route::get('list',[UserController::class,'index'])->name('users.index');
+
+
+    Route::get('list',[UserController::class,'index'])->name('users.list');
+    Route::get('{id}/show',[UserController::class,'show'])->name('users.show');
 });
+
 
 

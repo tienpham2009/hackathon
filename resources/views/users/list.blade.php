@@ -14,7 +14,6 @@
         .grow img {
             transition: 1s ease;
         }
-
         .grow img:hover {
             -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);
@@ -51,4 +50,3 @@
         crossorigin="anonymous"></script>
 </html>
 @endsection
-
