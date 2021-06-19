@@ -19,5 +19,10 @@ Route::get('/', function () {
 });
 
 Route::prefix('users')->group(function (){
+
     Route::get('users.show',[UserController::class,'show'])->name('users.show');
+    Route::get('list',[UserController::class,'index'])->name('users.index');
 });
+
+
+
