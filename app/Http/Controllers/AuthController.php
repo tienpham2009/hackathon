@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
-    protected $authRepo ;
+    protected UserRepository $authRepo ;
 
-    public function __construct( UserRepository $data)
+    public function __construct(UserRepository $data)
     {
         $this->authRepo = $data;
     }
@@ -38,7 +38,7 @@ class AuthController extends Controller
         if ($flag){
             return redirect()->route('home');
         }else{
-            $error = "tai khoan hoac matkhau khong dung";
+            $error = "tai khoan hoac mat khau khong dung";
             session()->flash('login-error' , $error);
             return redirect()->route('showFormLogin');
         }
