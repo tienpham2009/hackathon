@@ -10,35 +10,28 @@
         </div>
 
         <div class="col-md-12">
-            <form method="post" action="{{ route('users', $user->id) }}" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <label>Full name</label>
-                    <input type="text" class="form-control" name="name" value="{{ $user->name }}" required>
-                </div>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Full name</td>
+                        <td>Image</td>
+                        <td>Ingame</td>
+                        <td>Birth date</td>
+                        <td>Email</td>
+                        <td>Gender</td>
+                    </tr>
+                    <tr>
+                        <td>{{$user->name}}</td>
+                        <td>
+                            <img src="" alt="">
+                        </td>
+                        <td>{{$user->name_ingame}}</td>
+                        <td>{{$user->birth_date}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->gender}}</td>
+                    </tr>
+                </table>
 
-                <div class="form-group">
-                    <label>Ingame</label>
-                    <input type="text" class="form-control" name="name_ingame" value="{{$user->name_ingame}}">
-                </div>
-
-                <div class="form-group">
-                    <label>Birth date</label>
-                    <input type="date" name="birth_date" class="form-control"  value="{{ $task->birth_date }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" name="email" class="form-control" value="{{$task->email}}">
-                </div>
-
-                <div class="form-group">
-                    <label>Gender</label>
-
-                </div>
-                <button type="submit" class="btn btn-primary">Detail</button>
                 <a href="{{route('users.list')}}" class="btn btn-secondary">Back</a>
-            </form>
         </div>
     </div>
 @endsection

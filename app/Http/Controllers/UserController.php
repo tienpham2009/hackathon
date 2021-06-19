@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     protected UserRepository $userRepository;
+
     public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
@@ -50,7 +51,6 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $user->userRepository->getById($id);
         return view('users.detail',compact('user'));
     }
 
