@@ -16,9 +16,14 @@ class UserRepository
         $this->userModel = $user;
     }
 
-    public function getAll(): Collection|array
+    public function getAll()
     {
        return $this->userModel->all();
+    }
+
+    public function getById($id)
+    {
+        return $this->userModel->finOrFail($id);
     }
 
 }

@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
                 'birth_date' => '1991/11/15',
                 'email' => 'ngductam91@gmail.com',
                 'password' => Hash::make('123456'),
-                'gender' => 'Male'
+                'gender' => 'Male',
             ],
             [
                 'name' => 'Ngo Quoc Thinh',
@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
                 'birth_date' => '2000/05/15',
                 'email' => 'thinh123@gmail.com',
                 'password' => Hash::make('123456'),
-                'gender' => 'Male'
+                'gender' => 'Male',
             ],
             [
                 'name' => 'Nguyen Van Hai',

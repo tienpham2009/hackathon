@@ -9,7 +9,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -19,18 +18,14 @@ class UserController extends Controller
         $this->userRepository = $userRepository;
     }
 
-    public function index(): Application|Factory|View
+    public function index()
     {
         $users = $this->userRepository->getAll();
         return view('users.list',compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Application|Factory|View
-     */
-    public function create(): View|Factory|Application
+
+    public function create()
     {
         return view('users.create');
     }
@@ -55,8 +50,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $user->show();
-        return view('users.detail');
+        $user->userRepository->getById($id);
+        return view('users.detail',compact('user'));
     }
 
     /**
@@ -95,4 +90,5 @@ class UserController extends Controller
 //        Session::flash('delete-success','Delete success');
 //        return redirect()->route('users.list');
     }
+
 }
