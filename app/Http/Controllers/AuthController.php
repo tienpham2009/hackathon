@@ -56,10 +56,11 @@ class AuthController extends Controller
         $user = new User();
         $user->fill($request->all());
         $file = $request->image;
+
         if (!$request->hasFile('image')){
-            $user->image = $file;
+            $user->image = $file;;
         }else{
-            $request->file('image')->store('public/images' , $file);
+            $request->file('image')->storeAs('public/images' , $file );
             $user->image = $file;
         }
         $user->save();

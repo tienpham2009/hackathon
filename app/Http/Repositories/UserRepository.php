@@ -29,7 +29,6 @@ class UserRepository
 
     public function registration($user)
     {
-        dd($user);
         $user->save();
     }
 
