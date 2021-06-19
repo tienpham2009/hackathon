@@ -43,9 +43,7 @@
 </div>--}}
 <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-        <?php
-        include_once "../resources/views/navbar.php"
-        ?>
+       @include('navbar')
     </nav>
 
     <!-- Main Sidebar Container -->
