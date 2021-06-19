@@ -29,18 +29,18 @@
 }
 
 .slide-1 {
-    background-image: url("../image/lmht.jpg");
+    background-image: url("lmht.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .slide-2 {
-    background-image: url(featured_banner_2.jpg);
+    background-image: url("pubg.jpeg");
     background-size: cover;
     background-position: center;
 }
 .slide-3 {
-    background-image: url(featured_banner_2.jpg);
+    background-image: url("ow.jpg");
     background-size: cover;
     background-position: center;
 }
