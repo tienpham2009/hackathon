@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\GameRepository;
 use App\Http\Repositories\UserRepository;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -43,11 +46,27 @@ class AuthController extends Controller
 
     public function showFormRegistration(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('registration');
+        $gameModel = new GameRepository();
+        $games = $gameModel->getAll();
+        return view('registration' , compact('games'));
     }
 
-    public function registration()
+    public function registration(Request $request)
     {
+        $user = new User();
+        $user->fill($request->all());
+        $file = $request->image;
+        if (!$request->hasFile('image')){
+            $user->image = $file;
+        }else{
+            $request->file('image')->store('public/images' , $file);
+            $user->image = $file;
+        }
+        $user->save();
+        $this->authRepo->registration($user);
 
+        $message = "dang ki thanh cong !";
+        session()->flash('registration_success', $message);
+        return redirect()->route('showFormLogin');
     }
 }
