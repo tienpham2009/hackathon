@@ -1,7 +1,3 @@
-<!-- Main Sidebar Container -->
-
-<!-- Brand Logo -->
-?>
 <a href="#" class="brand-link">
     <img src="image/logo.png" alt="Web Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
@@ -123,15 +119,24 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?page=logout" class="nav-link">
+                        <a href="{{ route('logout') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-
-                                <i class="fas fa-angle-left right"></i>
+                                <i class="fas fa-angle-left right">Logout</i>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>
+                                <i class="fas fa-angle-left right">abc</i>
                             </p>
                         </a>
                     </li>
                 </ul>
+            </li>
+        </ul>
     </nav>
     <!-- /.sidebar-menu -->
 </div>

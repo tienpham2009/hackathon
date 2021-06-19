@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/logout' , function (){
+    echo 123;
+})->name('logout');
 Route::get('/login' , [ AuthController::class , 'showFormLogin'])->name('showFormLogin');
 Route::post('/login' ,[AuthController::class , 'checkLogin'] )->name('submitLogin');
 Route::get('/registration' ,[AuthController::class , 'showFormRegistration'])->name('showFormRegistration');
