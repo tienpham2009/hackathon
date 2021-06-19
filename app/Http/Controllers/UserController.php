@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\UserRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -9,14 +10,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Application|Factory|View
-     */
-    public function index()
+    protected UserRepository $userRepository;
+    public function __construct(UserRepository $userRepository)
     {
+        $this->userRepository = $userRepository;
+    }
 
+    public function index(): Application|Factory|View
+    {
+        $users = $this->userRepository->getAll();
+        return view('users.list',compact('users'));
     }
 
     /**
@@ -26,7 +29,7 @@ class UserController extends Controller
      */
     public function create(): View|Factory|Application
     {
-        return view('Users.create');
+        return view('users.create');
     }
 
     /**
