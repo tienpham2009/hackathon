@@ -1,4 +1,6 @@
-<!doctype html>
+@extends("home")
+@section("content")
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,4 +50,5 @@
         integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
         crossorigin="anonymous"></script>
 </html>
+@endsection
 
