@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     protected UserRepository $userRepository;
+
     public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
@@ -87,4 +88,5 @@ class UserController extends Controller
     {
         //
     }
+
 }
