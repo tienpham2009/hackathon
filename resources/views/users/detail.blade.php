@@ -23,28 +23,19 @@
                     <th scope="col">Birth date</th>
                     <th scope="col">Email</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Game Id</th>
+                    <th scope="col">Game name</th>
                 </tr>
                 </thead>
                 <tbody>
-                @if(count($customers) == 0)
-                    <tr>
-                        <td colspan="4">Không có dữ liệu</td>
-                    </tr>
-                @else
-                    @foreach($customers as $key => $customer)
                         <tr>
-                            <th scope="row">{{ ++$key }}</th>
+                            <th scope="row">{{$user->id}}</th>
                             <td>{{ $user->name }}</td>
-                            <td>{{ $user->name_ingame0}}</td>
-                            <td>{{ }}</td>
-                            <td>{{ }}</td>
-                            <td>{{ }}</td>
-                            <td>{{ }}</td>
-                            <td>{{ }}</td>
+                            <td>{{ $user->name_ingame}}</td>
+                            <td>{{ $user->birth_date}}</td>
+                            <td>{{ $user->email}}</td>
+                            <td>{{ $user->gender}}</td>
+                            <td><a href="{{ route('users.show', $game['id']) }}">{{ $user['name'] }}</a></td>
                         </tr>
-                    @endforeach
-                @endif
                 </tbody>
             </table>
         </div>
