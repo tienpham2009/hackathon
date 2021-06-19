@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,11 +37,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-    {{--Preloader
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{\Illuminate\Support\Facades\URL::asset('image/logo.png')}}" width="211px" height="211px" alt="Bookstore Logo">
-    </div>--}}
-    <!-- Navbar -->
+{{--Preloader
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{\Illuminate\Support\Facades\URL::asset('image/logo.png')}}" width="211px" height="211px" alt="Bookstore Logo">
+</div>--}}
+<!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <?php
         include_once "../resources/views/navbar.php"
@@ -55,9 +54,8 @@
     </aside>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <?php
-        include_once "../resources/views/content.php"
-        ?>
+        @include('content')
+        @yield("content")
     </div>
 
 
