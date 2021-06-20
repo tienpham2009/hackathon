@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\GameRepository;
 use App\Http\Repositories\UserRepository;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
-    protected $authRepo ;
+    protected UserRepository $authRepo ;
 
-    public function __construct( UserRepository $data)
+    public function __construct(UserRepository $data)
     {
         $this->authRepo = $data;
     }
@@ -35,7 +38,7 @@ class AuthController extends Controller
         if ($flag){
             return redirect()->route('home');
         }else{
-            $error = "tai khoan hoac matkhau khong dung";
+            $error = "tai khoan hoac mat khau khong dung";
             session()->flash('login-error' , $error);
             return redirect()->route('showFormLogin');
         }
@@ -43,11 +46,28 @@ class AuthController extends Controller
 
     public function showFormRegistration(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
-        return view('registration');
+        $gameModel = new GameRepository();
+        $games = $gameModel->getAll();
+        return view('registration' , compact('games'));
     }
 
-    public function registration()
+    public function registration(Request $request)
     {
+        $user = new User();
+        $user->fill($request->all());
+        $file = $request->image;
 
+        if (!$request->hasFile('image')){
+            $user->image = $file;;
+        }else{
+            $request->file('image')->storeAs('public/images' , $file );
+            $user->image = $file;
+        }
+        $user->save();
+        $this->authRepo->registration($user);
+
+        $message = "dang ki thanh cong !";
+        session()->flash('registration_success', $message);
+        return redirect()->route('showFormLogin');
     }
 }

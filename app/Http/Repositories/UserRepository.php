@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\DB;
 
 class UserRepository
 {
+    protected User $userModel;
+
+    public function __construct(User $user)
+    {
+        $this->userModel = $user;
+    }
+
     public function getAll(): \Illuminate\Support\Collection
     {
         return DB::table('users')->get();
@@ -18,6 +25,11 @@ class UserRepository
     public function getById($id)
     {
         return $this->userModel->findOrFail($id);
+    }
+
+    public function registration($user)
+    {
+        $user->save();
     }
 
 }

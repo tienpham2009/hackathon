@@ -10,27 +10,34 @@
     <link rel="stylesheet" href="../../public/css/style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
 </head>
-<body class="register-container">
+<body style="background-image: url({{url('image/login-bg.jpg')}});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;">
 <div>
     <article class="card-body mx-auto" style="max-width: 400px; background-color: whitesmoke">
-        <h4 class="card-title mt-3 text-center">Create Account</h4>
-        <p class="text-center">Join the Dark Realm of Phantasmal Dream!</p>
+        <h4 class="card-title mt-3 text-center">Đăng ký</h4>
         <p>
-            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via
-                facebook</a>
+            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Login qua Twitter</a>
+            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> Login qua
+                Facebook</a>
         </p>
-        <form method="post" action="register.php">
+        <form method="post" action="{{ route('registration') }}">
+            @csrf
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                 </div>
-                <input name="name" class="form-control" placeholder="Full name" type="text">
+                <input name="name" class="form-control" placeholder="Name" type="text">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="name_ingame" class="form-control" placeholder="Ingame" type="text">
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
@@ -40,15 +47,9 @@
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-phone"></i> </span>
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                 </div>
-                <select class="custom-select" style="max-width: 120px;">
-                    <option selected="">09</option>
-                    <option value="1">1900</option>
-                    <option value="2">0123</option>
-                    <option value="3">+84</option>
-                </select>
-                <input name="phone" class="form-control" placeholder="Phone number" type="text">
+                <input name="birth_date" class="form-control" placeholder="birth_date" type="date">
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
@@ -58,14 +59,33 @@
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"> <i class="fa fa-lock"></i></span>
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <input class="form-control" name="password" placeholder="Repeat password" type="password">
+                <select name="gender" id="gender" class="form-control">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <select name="game" id="game" class="form-control">
+                    @foreach($games as $game)
+                        <option value="{{ $game->id }}">{{$game->name}}</option>
+                    @endforeach
+                </select>
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" name="image" placeholder="" type="file">
             </div> <!-- form-group// -->
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block"> Create Account</button>
             </div> <!-- form-group// -->
-            <p class="text-center">Have an account? <a href="login.php">Log In</a></p>
+            <p class="text-center">Have an account? <a href="{{route('showFormLogin')}}">Log In</a></p>
         </form>
     </article>
 </div>
