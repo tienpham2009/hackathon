@@ -43,7 +43,7 @@
 </div>--}}
 <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-       @include('navbar')
+        @include('navbar')
     </nav>
 
     <!-- Main Sidebar Container -->
@@ -115,3 +115,4 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
+

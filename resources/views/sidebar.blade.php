@@ -1,17 +1,18 @@
+
+<!-- Sidebar -->
 <a href="#" class="brand-link">
     <img src="image/logo.png" alt="Web Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
     <span class="brand-text font-weight-light">Eternity Realm</span>
 </a>
-<!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="" class="img-circle elevation-2" alt="User Image">
+            <img src="{{asset('image/user.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">User Name</a>
+            <a href="#" class="d-block">User</a>
         </div>
     </div>
     <!-- SidebarSearch Form -->
@@ -47,7 +48,7 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="fas fa-bookmark"></i>
+                    <i class="fas fa-puzzle-piece"></i>
                     <p>
 
                         <i class="right fas fa-angle-left"></i>
@@ -65,36 +66,18 @@
                             </div>
                         </div>
                     </div>
-
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p></p>
-                                <span class="right badge badge-primary"></span>
-                            </a>
-                        </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-feather-alt"></i>
-                    <p>
-
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p></p>
+                            <span class="right badge badge-primary"></span>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-gamepad"></i>
                     <p>
 
                         <i class="fas fa-angle-left right"></i>
@@ -113,7 +96,7 @@
                 <a href="#" class="nav-link">
                     <i class="far fa-user"></i>
                     <p>
-
+                        Thông tin cá nhân
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
@@ -122,7 +105,7 @@
                         <a href="{{ route('logout') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-                                <i class="fas fa-angle-left right">Logout</i>
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                     </li>
@@ -130,7 +113,7 @@
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-                                <i class="fas fa-angle-left right">abc</i>
+                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                     </li>

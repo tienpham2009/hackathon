@@ -82,25 +82,5 @@
             </div>
         </div>
     </div>
-    <!-- /.row -->
-    <!-- Main row -->
-    {{--        <div class="row">--}}
-    {{--            <!-- Left col -->--}}
-    {{--            <section class="col-lg-12">--}}
-    {{--                <div class="img-slide img-slid-media d-flex justify-content-between mt-3">--}}
-    {{--                    <div class="owl-carousel owl-theme">--}}
-    {{--                        <div class="slide slide-1">--}}
-    {{--                            <div class="slide-content">--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                        <div class="slide slide-2">--}}
-    {{--                            <div class="slide-content">--}}
-    {{--                            </div>--}}
-    {{--                        </div>--}}
-    {{--                    </div>--}}
-    {{--                </div>--}}
-    {{--            </section>--}}
-    {{--            <!-- right col -->--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
 </section>
+
