@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-4 col-6">
                 <!-- small box -->
-                <div class="small-box grow"
+                <div class="small-box"
                      style="background-size: cover; background-position:center;background-image: url('{{asset('image/LOL.jpg')}}')">
                     <div class="inner" style="height: 200px">
                     </div>
@@ -83,3 +83,4 @@
         </div>
     </div>
 </section>
+

@@ -31,30 +31,42 @@
                         <div class="form-group">
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-user"></span></div>
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control"
+                                   placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span
-                                    class="fa fa-lock"></span></div>
-                            <input type="password" name="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <div class="form-group d-md-flex">
-                            <div class="w-100 text-md-right">
-                                <a href="#">Quên mật khẩu</a>
+                            <div class="icon d-flex align-items-center justify-content-center"><span></span>
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-user"></span></div>
+                                <input type="email" name="email" class="form-control"
+                                       placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-lock"></span></div>
+                                <input type="password" name="password" class="form-control"
+                                       placeholder="Password" required>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-100 text-md-right">
+                                    <a href="#">Quên mật khẩu</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit"
+                                        class="btn form-control btn-primary rounded submit px-3">
+                                    Đăng nhập
+                                </button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn form-control btn-primary rounded submit px-3">Đăng nhập
-                            </button>
-                        </div>
                     </form>
-                    <div class="w-100 text-center mt-4 text">
-                        <p class="mb-0">Bạn chưa đăng ký?</p>
-                        <a href="{{ route('showFormRegistration') }}">Đăng ký ngay!</a>
-                    </div>
-                </div>
+            <div class="w-100 text-center mt-4 text">
+                <p class="mb-0">Bạn chưa đăng ký?</p>
+                <a href="{{ route('showFormRegistration') }}">Đăng ký ngay!</a>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </section>
 <script src="{{ \Illuminate\Support\Facades\URL::asset("js/login/jquery.min.js") }}"></script>

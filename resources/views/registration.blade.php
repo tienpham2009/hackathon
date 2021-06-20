@@ -24,7 +24,6 @@
             <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Login qua Twitter</a>
             <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> Login qua
                 Facebook</a>
-        </p>
         <form method="post" action="{{ route('registration') }}">
             @csrf
             <div class="form-group input-group">
@@ -37,6 +36,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                 </div>
+
                 <input name="name_ingame" class="form-control" placeholder="Ingame" type="text">
             </div> <!-- form-group// -->
             <div class="form-group input-group">

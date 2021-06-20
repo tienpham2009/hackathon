@@ -1,9 +1,10 @@
-<a href="{{route('home')}}" class="brand-link">
-    <img src="{{asset('image/logo.png')}}" alt="Web Logo" class="brand-image img-circle elevation-3"
+
+<!-- Sidebar -->
+<a href="#" class="brand-link">
+    <img src="image/logo.png" alt="Web Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
     <span class="brand-text font-weight-light">Eternity Realm</span>
 </a>
-<!-- Sidebar -->
 <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -65,9 +66,8 @@
                             </div>
                         </div>
                     </div>
-
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p></p>
                             <span class="right badge badge-primary"></span>
@@ -102,10 +102,17 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="index.php?page=logout" class="nav-link">
+                        <a href="{{ route('logout') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>
-                                Log out
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
