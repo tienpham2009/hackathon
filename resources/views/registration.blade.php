@@ -13,29 +13,31 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-<body class="register-container">
+<body style="background-image: url({{url('image/login-bg.jpg')}});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;">
 <div>
     <article class="card-body mx-auto" style="max-width: 400px; background-color: whitesmoke">
-        <h4 class="card-title mt-3 text-center">Create Account</h4>
-        <p class="text-center">Join the Dark Realm of Phantasmal Dream!</p>
+        <h4 class="card-title mt-3 text-center">Đăng ký</h4>
         <p>
-            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via
-                facebook</a>
-        </p>
+            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Login qua Twitter</a>
+            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> Login qua
+                Facebook</a>
         <form method="post" action="{{ route('registration') }}">
             @csrf
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                 </div>
-                <input name="name" class="form-control" placeholder=" name" type="text">
+                <input name="name" class="form-control" placeholder="Name" type="text">
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                 </div>
-                <input name="name_ingame" class="form-control" placeholder="name_ingame" type="text">
+
+                <input name="name_ingame" class="form-control" placeholder="Ingame" type="text">
             </div> <!-- form-group// -->
             <div class="form-group input-group">
                 <div class="input-group-prepend">
@@ -89,42 +91,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-{{--<form action="{{ route('registration') }}" method="post">--}}
-{{--    <p>name</p>--}}
-{{--    @csrf--}}
-{{--    <input type="text" name="name">--}}
-{{--    <p>name in game</p>--}}
-{{--    <input type="text" name="name_ingame">--}}
-{{--    <p>birth_date</p>--}}
-{{--    <input type="date" name="birth_date">--}}
-{{--    <p>email</p>--}}
-{{--    <input type="email" name="email">--}}
-{{--    <p>password</p>--}}
-{{--    <input type="password" name="password">--}}
-{{--    <p>gender</p>--}}
-{{--    <select name="gender" id="gender">--}}
-{{--        <option value="male">male</option>--}}
-{{--        <option value="female">female</option>--}}
-{{--    </select>--}}
-{{--    <p>game</p>--}}
-{{--    <select name="game" id="game">--}}
-{{--        @foreach($games as $game)--}}
-{{--            <option value="{{ $game->id }}">{{$game->name}}</option>--}}
-{{--        @endforeach--}}
-{{--    </select>--}}
-{{--    <p>image</p>--}}
-{{--    <input type="file" name="image">--}}
-{{--    <button type="submit">dang ki</button>--}}
-{{--</form>--}}

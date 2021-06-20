@@ -56,7 +56,7 @@
 </div>--}}
 <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-       @include('navbar')
+        @include('navbar')
     </nav>
 
     <!-- Main Sidebar Container -->
@@ -65,8 +65,7 @@
     </aside>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('content')
-        @yield("content")
+        @yield('content')
     </div>
 
 
