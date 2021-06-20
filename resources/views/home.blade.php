@@ -52,8 +52,7 @@
     </aside>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        @include('content')
-        @yield("content")
+        @yield('content')
     </div>
 
 
