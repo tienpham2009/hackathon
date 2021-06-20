@@ -10,10 +10,12 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/list/style.css')}}">
     <style>
         .grow img {
             transition: 1s ease;
         }
+
         .grow img:hover {
             -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);
@@ -23,23 +25,37 @@
     </style>
 </head>
 <body>
-<div class="col-12 col-sm-12 row mb-2">
-    @foreach($users as $key => $item)
-        <div class="col-sm-3 grow" style="margin-top: 10px">
-            <div class="card text-center">
-                <div>
-                    <a href="{{route('users.show',['id'=>$item->id])}}" style="text-decoration: none">
-                        <div class="card-body">
-                            <img src="{{$item->image}}" style="width: 100% ; height: 150px"/>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row userMain">
+        @foreach($users as $item)
+            <div class="col-md-3 col-sm-4">
+                <div class="userBlock">
+                    <div class="backgrounImg">
+                        @if($item->status === "online")
+                            <img src="{{asset('image/green.png')}}">
+                        @elseif($item->status === "playing")
+                        <img src="{{asset('image/red.png')}}">
+                        @endif
+                    </div>
+                    <div class="userImg">
+                        <img src="https://image.ibb.co/es4AG7/author4.jpg">
+                    </div>
+                    <div class="userDescription">
+                        <h5>{{$item->name}}</h5>
+                        <p>{{$item->name_ingame}}</p>
+                        <div class="followrs">
+                            <span class="number"><?php echo rand(50, 500) ?></span>
+                            <span>Followers</span>
                         </div>
-                        <div class="card-header">
-                            {{$item->name}}<span class="right badge badge-danger">Hot</span>
-                        </div>
-                    </a>
+                        <a href="">
+                            <button class="btn">Follow</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
