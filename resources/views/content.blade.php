@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-4 col-6">
                 <!-- small box -->
-                <div class="small-box grow"
+                <div class="small-box"
                      style="background-size: cover; background-position:center;background-image: url('{{asset('image/LOL.jpg')}}')">
                     <a href="{{route('users.list')}}" class="small-box-footer">
                     <div class="inner" style="height: 200px">
@@ -83,7 +83,7 @@
                 <!-- small box -->
                 <div class="small-box"
                      style="background-size: cover; background-position:center;background-image: url('{{asset('image/pubgmobile.jpg')}}')">
-
+                    <a href="{{route('users.list')}}" class="small-box-footer">
                     <div class="inner" style="height: 200px">
                     </div>
                     <div class="icon">
