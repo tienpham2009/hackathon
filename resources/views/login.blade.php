@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="login-wrap py-5">
                     <div class="img d-flex align-items-center justify-content-center"
-                         style="background-image: url(image/logo.png);"></div>
+                         style="background-image: url(public/image/logo.png);"></div>
                     <h3 class="text-center mb-0">Chào mừng bạn trở lại!</h3>
                     <p class="text-center">Đăng nhập bằng tài khoản của Realm</p>
                     <form method="post" action="{{ route('submitLogin') }}" class="login-form">
@@ -35,12 +36,6 @@
                                    placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <div class="icon d-flex align-items-center justify-content-center"><span></span>
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-user"></span></div>
-                                <input type="email" name="email" class="form-control"
-                                       placeholder="Email" required>
-                            </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center">
                                     <span class="fa fa-lock"></span></div>

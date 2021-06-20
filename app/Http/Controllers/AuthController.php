@@ -24,6 +24,7 @@ class AuthController extends Controller
 
     public function checkLogin(Request $request ): \Illuminate\Http\RedirectResponse
     {
+
         $email = $request->email;
         $password = $request->password;
         $flag = false;

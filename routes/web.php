@@ -15,22 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('content');
-})->name('home');
-
-Route::get('/logout' , function (){
-    echo 123;
-})->name('logout');
 Route::get('/login' , [ AuthController::class , 'showFormLogin'])->name('showFormLogin');
 Route::post('/login' ,[AuthController::class , 'checkLogin'] )->name('submitLogin');
 Route::get('/registration' ,[AuthController::class , 'showFormRegistration'])->name('showFormRegistration');
 Route::post('/registration' ,[AuthController::class , 'registration'] )->name('registration');
 
-Route::prefix('users')->group(function (){
-    Route::get('list',[UserController::class,'index'])->name('users.list');
-    Route::get('{id}/show',[UserController::class,'show'])->name('users.show');
+
+Route::middleware('auth')->group(function (){
+    Route::get('/', function () {
+        return view('content');
+    })->name('home');
+
+    Route::get('/logout' , function (){
+        echo 123;
+    })->name('logout');
+
+    Route::prefix('users')->group(function (){
+        Route::get('list',[UserController::class,'index'])->name('users.list');
+        Route::get('{id}/show',[UserController::class,'show'])->name('users.show');
+    });
 });
+
 
 
 
