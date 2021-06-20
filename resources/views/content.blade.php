@@ -1,3 +1,5 @@
+@extends('home')
+@section('content')
 <!-- Main content -->
 <section class="content" style="margin-top: 10px">
     <div class="container-fluid">
@@ -104,3 +106,4 @@
     {{--        </div>--}}
     {{--    </div>--}}
 </section>
+@endsection

@@ -16,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('content');
 })->name('home');
-
 Route::get('/logout' , function (){
     echo 123;
 })->name('logout');
